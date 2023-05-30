@@ -19,7 +19,7 @@ const Header: FC<HeaderInterface> = ({
     data,
     imageData
 }) => {
-    return <div>
+    return <div className="class-Header">
         <div>
             <h1>{title}</h1>
             {subTitle && <h5>{subTitle}</h5>}
