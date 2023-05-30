@@ -68,6 +68,90 @@ body {
       grid-row: 6;
     }
   }
+
+  .class-checkUser {
+    background: #7E8FF2;
+    margin: 20vh -8rem 0;
+    padding: 8vh 8rem;
+    display: grid;
+    grid-template-columns: auto 50%;
+    gap: 20px;
+
+    > div:first-child {
+      display: flex;
+      gap: 4vw;
+      justify-content: center;
+
+      > div  {
+        position: relative;
+        bottom: 0;
+        display: flex;
+        flex-direction: column;
+        align-self: end;
+
+        > span {
+          bottom: 0;
+          left: 0;
+          right: 0;
+          position: absolute;
+          border-radius: 1000px 1000px 0 0;
+          text-align: center;
+          padding-top: 20px;
+        }
+      }
+
+      > div:first-child {
+        // height: 100%;
+
+        > span {
+          background-color: #8EF27E;
+          top: calc(145px + 20px);
+        }
+      }
+      > div:nth-child(2) {
+        // height: 69%;
+
+        > span {
+          background-color: #F27E7E;
+          top: calc(145px + 20px);
+        }
+      }
+      > div:last-child {
+        // height: 80%;
+
+        > span {
+          background-color: #F2E67E;
+          top: calc(145px + 20px);
+        }
+      }
+    }
+
+    > div:last-child {
+      h1, p {
+        color: #e8e5f0;
+      }
+      > div:last-child {
+        height: 50%;
+        max-height: 230px;
+        overflow-y: auto;
+        padding: 20px 20px 20px 0;
+        display: grid;
+        gap: 20px;
+
+        > div {
+          background: #e8e5f0;
+          color: #7e8ff2;
+          padding: 20px;
+          border-radius: 10px;
+          opacity: 0.5;
+        }
+        > div:focus,
+        > div:hover {
+          opacity: 1;
+        }
+      }
+    }
+  }
 }
 
 h1,

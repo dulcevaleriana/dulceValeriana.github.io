@@ -83,6 +83,7 @@ const Home = () => {
         questions={[
           {
             question:"¿Organizas actualmente tus citas médicas y resultados?",
+            selected: false,
             answer:{
                 yes:1,
                 maybe:2,
@@ -91,6 +92,7 @@ const Home = () => {
           },
           {
             question:"¿Te resulta difícil recordar cuándo tienes una cita médica?",
+            selected: false,
             answer:{
                 yes:5,
                 maybe:6,
@@ -99,6 +101,7 @@ const Home = () => {
           },
           {
             question:"¿Es importante para ti tener una buena organización de tus citas médicas?",
+            selected: false,
             answer:{
                 yes:9,
                 maybe:3,
@@ -107,6 +110,7 @@ const Home = () => {
           },
           {
             question:"¿Has utilizado alguna aplicación o servicio para gestionar tus citas médicas anteriormente?",
+            selected: false,
             answer:{
                 yes:12,
                 maybe:1,
@@ -115,6 +119,7 @@ const Home = () => {
           },
           {
             question:"¿Te gustó las características particulares de esa aplicación o servicio?",
+            selected: false,
             answer:{
                 yes:8,
                 maybe:2,
@@ -123,6 +128,7 @@ const Home = () => {
           },
           {
             question:"¿Te gustaría recibir tus resultados médicos a través de una aplicación?",
+            selected: false,
             answer:{
                 yes:5,
                 maybe:6,
@@ -131,6 +137,7 @@ const Home = () => {
           },
           {
             question:"¿Te gustaría tener la opción de programar citas médicas rápidas virtuales?",
+            selected: false,
             answer:{
                 yes:5,
                 maybe:6,
@@ -139,6 +146,7 @@ const Home = () => {
           },
           {
             question:"¿Te gustaría que una opción de cita médica rápida tuviera características específicas?",
+            selected: false,
             answer:{
                 yes:9,
                 maybe:3,
@@ -147,6 +155,7 @@ const Home = () => {
           },
           {
             question:"¿Te gustaría recibir notificaciones de citas médicas y resultados a través de una aplicación o servicio?",
+            selected: false,
             answer:{
                 yes:11,
                 maybe:2,
@@ -155,6 +164,7 @@ const Home = () => {
           },
           {
             question:"¿Hay algún otro problema relacionado con la organización de citas médicas y resultados que te gustaría resolver con un servicio como el SAAS propuesto?",
+            selected: false,
             answer:{
                 yes:13,
                 maybe:0,
