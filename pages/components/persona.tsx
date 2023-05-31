@@ -15,7 +15,7 @@ const Persona: FC<PersonaInterface> = ({
     data,
     person
 }) => {
-    return <div>
+    return <div className="class-persona">
         <h1>{title}</h1>
         <p>{data}</p>
         {person.map((data,key)=><div key={key}>
