@@ -243,6 +243,20 @@ body {
       }
     }
   }
+
+  .class-DBAModel {
+    margin: 0 -8rem;
+    padding: 8vh 8rem;
+    display: grid;
+    gap: 20px;
+    align-items: flex-start;
+
+    > img {
+      color: transparent;
+      width: 100%;
+      height: auto;
+    }
+  }
 }
 
 h1,
