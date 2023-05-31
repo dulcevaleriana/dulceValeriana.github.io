@@ -419,6 +419,7 @@ const Home = () => {
         },
         {
           title:"Process: Create account",
+          howManyColumns: 2,
           dataArray:[
             {
               name:"#1 = Choose type account",
@@ -470,14 +471,6 @@ const Home = () => {
         height: 424
       }}
     />
-        {/* title: string,
-    data: string,
-    imageArray:{
-        imageLink?: string,
-        imageAlt?: string,
-        imageWidth?: number,
-        imageHeight?: number
-    }[] */}
     <GalleryComponent
       title="Mapas de experiencia"
       data="Se crearon mapas de experiencia para cada uno de los perfiles de usuario, mostrando los diferentes puntos de contacto que los usuarios tendrían con el servicio SAAS. Se incluyeron elementos como la creación de citas, la gestión de resultados médicos y la comunicación con el médico."
