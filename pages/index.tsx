@@ -1325,11 +1325,6 @@ const Home = () => {
         },
       ]}
     />
-        {/* message:string,
-    socialMediaArray:{
-        icon:string,
-        link:string
-    }[] */}
     <Footer
       message="Made with <3 by Dulce Valeriana"
       socialMediaArray={[

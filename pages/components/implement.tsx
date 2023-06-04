@@ -12,7 +12,7 @@ const Implement: FC<ImplementInterface> = ({
     data,
     video
 }) => {
-    return <div>
+    return <div className="class-implement">
         <h1>{title}</h1>
         <p>{data}</p>
         <Image src={video} alt="Vercel Logo" width={726} height={408} />

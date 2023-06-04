@@ -17,7 +17,7 @@ const NextStep: FC<NextStepInterface> = ({
     data,
     linkButtons
 }) => {
-    return <div>
+    return <div className="class-NextStep">
         <h1>{title}</h1>
         <p>{data}</p>
         <div>
