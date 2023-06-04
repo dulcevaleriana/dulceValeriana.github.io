@@ -47,8 +47,9 @@ body {
     grid-template-columns: auto auto auto auto auto auto auto auto;
     position: absolute;
     transform: rotate(7deg);
-    top: 50vh;
+    top: 40vh;
     z-index: -1;
+    gap: 10px;
 
 
     > img:first-child {
@@ -153,6 +154,11 @@ body {
       grid-column: 1 / span 3;
       color: #e8e5f0;
     }
+
+    > div {
+      width: 70%;
+      align-self: flex-start;
+    }
   }
 
   .class-ExperienceMap {
@@ -255,6 +261,91 @@ body {
       color: transparent;
       width: 100%;
       height: auto;
+    }
+  }
+
+  .class-GalleryComponent {
+    margin: 0 -8rem;
+    padding: 8vh 8rem;
+    display: grid;
+    grid-gap: 20px;
+    gap: 20px;
+    align-items: flex-start;
+
+    > p {
+      max-width: 797px;
+    }
+
+    > div:last-child{
+      display: flex;
+      gap: 10px;
+      margin: 0 -8rem;
+      padding: 2vh 0 2vh 8rem;
+      align-items: center;
+
+      > span {
+        background: #5f6cba;
+        width: 20px;
+        height: 20px;
+        border-radius: 1000px;
+        opacity: 0.5;
+      }
+
+      > span:hover {
+        opacity: 1;
+      }
+
+      > span.class-spanSelected {
+        background: #7E8FF2;
+        opacity: 1;
+        width: 20px !important;
+        height: 20px !important;
+      }
+    }
+    > div:nth-last-child(2) {
+      display: flex;
+      gap: 20px;
+      overflow-x: hidden;
+      margin: 0 -8rem;
+      padding: 2vh 8rem;
+      align-items: center;
+
+      > img {
+        width: 305px !important;
+        height: 192px !important;
+      }
+
+      > img.class-imgSelected {
+        color: transparent;
+        width: 686px !important;
+        height: 429px !important;
+        box-shadow: 0px 0px 30px 10px #7e8ff226;
+      }
+    }
+  }
+
+  .class-classOnlyShowImage {
+    gap: 0px !important;
+    display: grid !important;
+    grid-template-columns: 409px 296px 686px;
+    grid-template-rows: 310px 138px 256px;
+    justify-self: end;
+
+
+    > img {
+      color: transparent;
+      box-shadow: 0px 0px 30px 10px rgba(126, 143, 242, 0.1490196078);
+    }
+
+    > img:first-child {
+      grid-column: 3;
+    }
+    > img:nth-child(2) {
+      grid-column: 2;
+      grid-row: 2;
+    }
+    > img:nth-child(3) {
+      grid-row: 3;
     }
   }
 }

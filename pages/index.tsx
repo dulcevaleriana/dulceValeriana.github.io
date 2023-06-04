@@ -1277,6 +1277,7 @@ const Home = () => {
     <GalleryComponent
       title="Pruebas de usabilidad"
       data="Se realizaron pruebas de usabilidad con usuarios reales para evaluar la eficacia de las soluciones propuestas. Los resultados de las pruebas indicaron que el servicio SAAS era fácil de usar y que los pacientes podían coordinar sus citas médicas y enviar resultados médicos de manera efectiva. Los usuarios también valoraron positivamente la opción de agendar citas rápidas virtuales o presenciales de 5 minutos."
+      classOnlyShowImage="class-classOnlyShowImage"
       imageArray={[
         {
           imageLink: "/image/mockup/paciente/mockup-04.png",
