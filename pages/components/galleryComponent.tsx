@@ -23,11 +23,12 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const galleryRef = useRef<HTMLDivElement>(null);
     const isMiniDesktop = useMediaQuery("(max-width: 992px)");
+    const isSmartphone = useMediaQuery("(max-width: 600px)");
 
     useEffect(() => {
       if (galleryRef.current) {
         galleryRef.current.scrollTo({
-          left: isMiniDesktop ? currentImageIndex * (window.innerWidth / 3) : currentImageIndex * 330,
+          left: isSmartphone ? currentImageIndex * (window.innerWidth / 1.65) : isMiniDesktop ? currentImageIndex * (window.innerWidth / 3) : currentImageIndex * 330,
         //   left: currentImageIndex * galleryRef.current.offsetWidth,
           behavior: "smooth",
         });

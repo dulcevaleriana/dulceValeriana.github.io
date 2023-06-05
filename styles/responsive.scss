@@ -1,32 +1,92 @@
-// desktop media
-@media only screen and (max-width: 1300px) {
-    html {
-        // background-color: red;
-        .class-Header {
-            display: flex;
-            align-items: flex-start;
-            flex-direction: column;
+// smartphone
+@media only screen and (max-width: 600px) {
+    .class-Header {
+        div:first-child {
+            max-width: 100% !important;
+        }
+        > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .class-checkUser {
+        text-align: center;
+        > div:first-child > div > img {
+            color: transparent;
+            width: 90px;
+        }
+        > div:last-child > div:last-child {
+            padding: 20px 0 !important;
+        }
+    }
+    .class-persona {
+        text-align: center;
+        grid-gap: 20px !important;
+        gap: 20px !important;
 
-            div:first-child {
-                max-width: 60vw;
+        > div {
+            display: grid;
+            grid-template-columns: auto !important;
+            justify-items: center;
+            text-align: center;
+
+            > p {
+                grid-column: 1 !important;
             }
-            > img {
-                align-self: flex-end;
-            }
         }
-        .class-Header:nth-child(2) > img {
-            display: none;
+    }
+    .class-ExperienceMap {
+        display: grid;
+        grid-template-columns: auto 57px !important;
+        align-items: flex-end !important;
+
+        > div:last-child > div {
+            border-radius: 1000px !important;
         }
-        .class-persona > div {
-            width: auto;
+    }
+    .class-DBAModel {
+        text-align: center;
+    }
+    .class-GalleryComponent {
+        text-align: center;
+
+        > div:nth-last-child(2) > img.class-imgSelected {
+            width: 80vw !important;
+            height: auto !important;
         }
+    }
+    .class-implement {
+        > p {
+            width: 100% !important;
+        }
+        > img {
+            width: 100%;
+            height: auto;
+        }
+    }
+    .class-NextStep {
+        align-items: flex-start;
+        text-align: center;
+
+        > p {
+            width: 100% !important;
+        }
+        > div:last-child {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
+    .class-ExperienceMap {
+        text-align: center;
     }
 }
 // desktop mini
 @media only screen and (max-width: 1024px) {
     .Home_container__97eC3,
     .container {
-        padding: 0 4rem !important;
+        padding: 0 2rem !important;
     }
     html {
         nav.class-menuComponent > ul {
@@ -109,8 +169,27 @@
         }
     }
 }
+// desktop media
+@media only screen and (max-width: 1300px) {
+    html {
+        // background-color: red;
+        .class-Header {
+            display: flex;
+            align-items: flex-start;
+            flex-direction: column;
 
-// tablet
-@media only screen and (max-width: 992px) {
-
+            div:first-child {
+                max-width: 60vw;
+            }
+            > img {
+                align-self: flex-end;
+            }
+        }
+        .class-Header:nth-child(2) > img {
+            display: none;
+        }
+        .class-persona > div {
+            width: auto;
+        }
+    }
 }

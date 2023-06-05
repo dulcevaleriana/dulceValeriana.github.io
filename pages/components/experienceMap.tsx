@@ -1,5 +1,5 @@
 import React, { FC, useState } from "react"
-import Image from 'next/image'
+import useMediaQuery from "../hooks/useMediaQuery"
 
 interface ExperienceMapInterface {
     title: string,
@@ -20,6 +20,7 @@ const ExperienceMap: FC<ExperienceMapInterface> = ({
         mapsArray
     }) => {
     const [getKey , setGetKey] = useState(0);
+    const isMiniDesktop = useMediaQuery("(max-width: 600px)");
 
     const SubComponentOrganigram = (data:any,key:number) => {
         console.log({data, condition: data.data.howManyColumns === 2})
@@ -39,7 +40,7 @@ const ExperienceMap: FC<ExperienceMapInterface> = ({
         <p>{data}</p>
         <SubComponentOrganigram key={getKey} data={mapsArray[getKey]}/>
         <div>
-        {mapsArray.map((data,key) => <div key={key} onClick={()=>setGetKey(key)} style={{ opacity: key === getKey && "1" }}>{data.title}</div>)}
+        {mapsArray.map((data,key) => <div key={key} onClick={()=>setGetKey(key)} style={{ opacity: key === getKey && "1" }}>{isMiniDesktop ? key : data.title}</div>)}
         </div>
     </div>
 }
