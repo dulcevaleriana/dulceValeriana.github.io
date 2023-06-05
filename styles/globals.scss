@@ -311,14 +311,14 @@ body {
       align-items: center;
 
       > img {
-        width: 305px !important;
-        height: 192px !important;
+        width: 305px;
+        height: 192px;
       }
 
       > img.class-imgSelected {
         color: transparent;
-        width: 686px !important;
-        height: 429px !important;
+        width: 686px;
+        height: 429px;
         box-shadow: 0px 0px 30px 10px #7e8ff226;
       }
     }
@@ -451,3 +451,6 @@ button:hover {
 button:focus {
   background: #3F3D56;
 }
+
+@import "./scrollbar.scss";
+@import "./responsive.scss";
