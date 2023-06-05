@@ -1,12 +1,12 @@
 import React, { FC, useState } from "react"
 import Image from 'next/image'
+import useMediaQuery from "../hooks/useMediaQuery"
 
 interface CheckUserInterface {
     title: string,
     data: string,
     questions: {
         question:string,
-        selected: boolean,
         answer:{
             yes:number,
             maybe:number,
@@ -20,17 +20,20 @@ const CheckUser: FC<CheckUserInterface> = ({
     data,
     questions
 }) => {
+    const [getKey, setGetKey] = useState(0);
     const [answer, setAnswer] = useState({
         yes:questions[0].answer.yes,
         maybe:questions[0].answer.maybe,
         not:questions[0].answer.not
     })
+    const isMiniDesktop = useMediaQuery("(max-width: 1024px)")
 
     const selectQuestion = (answer,key) => {
-        questions.map(data => data.selected = false)
-        questions[key].selected = true
+        setGetKey(key)
         setAnswer(answer)
     }
+
+    console.log({isMiniDesktop})
 
     return <div className="class-checkUser">
         <div>
@@ -94,13 +97,19 @@ const CheckUser: FC<CheckUserInterface> = ({
                     <p>{answer.maybe}</p>
                 </span>
             </div>
+            {isMiniDesktop && <div>
+                {questions.map((data,key) => <div key={key} onClick={() => selectQuestion(data.answer,key)} style={{opacity: getKey === key && '1'}}>{key}</div>)}
+            </div>}
         </div>
         <div>
             <h1>{title}</h1>
             <p>{data}</p>
-            <div>
-                {questions.map((data,key) => <div key={key} onClick={() => selectQuestion(data.answer,key)} style={{opacity: data.selected && '1'}}>{data.question}</div>)}
-            </div>
+            {isMiniDesktop && <div>
+                {questions.filter((check, subKey) => getKey === subKey).map((data,key) => <div style={{opacity: '1'}}>{data.question}</div>)}
+            </div>}
+            {!isMiniDesktop && <div>
+                {questions.map((data,key) => <div key={key} onClick={() => selectQuestion(data.answer,key)} style={{opacity: getKey === key && '1'}}>{data.question}</div>)}
+            </div>}
         </div>
     </div>
 }

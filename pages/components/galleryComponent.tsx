@@ -1,5 +1,6 @@
 import React, { FC, useState, useEffect, useRef } from "react"
 import Image from 'next/image'
+import useMediaQuery from "../hooks/useMediaQuery"
 
 interface GalleryComponentInterface {
     title: string,
@@ -21,11 +22,12 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
 }) => {
     const [currentImageIndex, setCurrentImageIndex] = useState(0);
     const galleryRef = useRef<HTMLDivElement>(null);
+    const isMiniDesktop = useMediaQuery("(max-width: 992px)");
 
     useEffect(() => {
       if (galleryRef.current) {
         galleryRef.current.scrollTo({
-          left: currentImageIndex * 330,
+          left: isMiniDesktop ? currentImageIndex * (window.innerWidth / 3) : currentImageIndex * 330,
         //   left: currentImageIndex * galleryRef.current.offsetWidth,
           behavior: "smooth",
         });
@@ -48,7 +50,7 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
                 />
             ))}
         </div>
-        {!classOnlyShowImage && <div>
+        {!isMiniDesktop ? !classOnlyShowImage && <div>
             {imageArray.map((img,key) => (
                 <span
                     onClick={() => setCurrentImageIndex(key)}
@@ -59,7 +61,7 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
                     }}
                 />
             ))}
-        </div>}
+        </div> : <div/>}
     </div>
 }
 
