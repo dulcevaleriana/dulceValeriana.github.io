@@ -12,13 +12,13 @@ export default function Menu() {
                 <h5>Diseñadora con un fuerte enfoque en <span>Accesiibilidad Web</span></h5>
             </li>
             <li>
-                <Link href="/">Works</Link>
+                <Link href="/">Trabajos</Link>
             </li>
             <li>
-                <Link href="https://www.linkedin.com/in/dulcevaleriana/" target="_blank">Meet me</Link>
+                <Link href="https://www.linkedin.com/in/dulcevaleriana/" target="_blank">Conoceme</Link>
             </li>
             <li>
-                <Button name="Lest talk" link="mailto:dulceguzmantaveras@gmail.com"/>
+                <Button name="Hablemos" link="mailto:dulceguzmantaveras@gmail.com"/>
             </li>
         </ul>
     </nav>
