@@ -14,7 +14,7 @@ const Button: FC<buttonInterface> = ({
     icon
 }) => {
     const ButtonComp = () => <button>{icon && <Image src={icon} alt="icon" width={24} height={24} />}{name}</button>
-    return link ? <Link href={link}><ButtonComp/></Link> : <ButtonComp/>
+    return link ? <Link href={link} target="_blank"><ButtonComp/></Link> : <ButtonComp/>
 }
 
 export default Button;

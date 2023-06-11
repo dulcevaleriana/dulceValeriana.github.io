@@ -21,7 +21,7 @@ const NextStep: FC<NextStepInterface> = ({
         <h1>{title}</h1>
         <p>{data}</p>
         <div>
-            {linkButtons.map((btn,key) => <Button
+            {linkButtons && linkButtons.map((btn,key) => <Button
                 key={key}
                 name={btn.name}
                 link={btn.link}

@@ -17,7 +17,7 @@ const DbaModel: FC<DbaModelInterface> = ({
 }) => {
     return <div className="class-DBAModel">
         <h1>{title}</h1>
-        <Image src={imageData.src} alt={imageData.alt} width={imageData.width} height={imageData.height} />
+        <Image src={imageData?.src} alt={imageData?.alt} width={imageData?.width} height={imageData?.height} />
     </div>
 }
 

@@ -7,13 +7,15 @@ export default function Menu() {
     return <nav className="class-menuComponent">
         <ul>
             <li>
-                <Image src="/image/logo.svg" alt="Vercel Logo" width={72.13} height={50} />
+                {/* <Image src="/image/logo.svg" alt="Vercel Logo" width={72.13} height={50} /> */}
+                <h2>Dulce Valeriana</h2>
+                <h5>Diseñadora con un fuerte enfoque en <span>Accesiibilidad Web</span></h5>
             </li>
             <li>
-                <Link href="/">Home</Link>
+                <Link href="/">Works</Link>
             </li>
             <li>
-                <Link href="https://www.linkedin.com/in/dulcevaleriana/">Meet me</Link>
+                <Link href="https://www.linkedin.com/in/dulcevaleriana/" target="_blank">Meet me</Link>
             </li>
             <li>
                 <Button name="Lest talk" link="mailto:dulceguzmantaveras@gmail.com"/>

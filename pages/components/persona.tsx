@@ -18,7 +18,7 @@ const Persona: FC<PersonaInterface> = ({
     return <div className="class-persona">
         <h1>{title}</h1>
         <p>{data}</p>
-        {person.map((data,key)=><div key={key}>
+        {person && person.map((data,key)=><div key={key}>
             <Image src={data.photoLink} alt={data.photoLink} width={145} height={145} />
             <p>{data.data}</p>
         </div>)}

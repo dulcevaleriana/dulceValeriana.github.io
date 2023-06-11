@@ -9,6 +9,10 @@ body {
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 
+  img {
+      border-radius: 20px;
+  }
+
   nav.class-menuComponent > ul {
     display: grid;
     grid-template-columns: auto 6vw 6vw 147px;
@@ -16,6 +20,19 @@ body {
     padding: 0;
     margin: 3vh 0 106px;
     align-items: center;
+
+    h2 {
+      color: #5f6cba;
+      font-weight: 400;
+    }
+
+    span {
+      background: #5f6cbd;
+      color: #e8e5f0;
+      padding: 10px;
+      border-radius: 10px;
+      margin-left: 10px;
+    }
 
     li {
       list-style: none;
@@ -413,6 +430,10 @@ a:focus {
 h1 {
   font-size: 40pt;
   font-weight: 200;
+}
+
+h5 {
+  color: #3F3D56;
 }
 
 p {

@@ -17,7 +17,7 @@ const Footer: FC<FooterInterface> = ({
     return <div className="class-Footer">
         <p>{message}</p>
         <div>
-            {socialMediaArray.map((data,key) => <Link href={data.link}><Image key={key} src={data.icon} alt={data.icon} width={24} height={24} /></Link>)}
+            {socialMediaArray && socialMediaArray.map((data,key) => <Link href={data.link} key={key} target="_blank"><Image key={key} src={data.icon} alt={data.icon} width={24} height={24} /></Link>)}
         </div>
     </div>
 }

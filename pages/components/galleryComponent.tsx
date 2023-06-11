@@ -20,7 +20,7 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
     imageArray,
     classOnlyShowImage
 }) => {
-    const [currentImageIndex, setCurrentImageIndex] = useState(0);
+    const [currentImageIndex, setCurrentImageIndex] = useState<number>(0);
     const galleryRef = useRef<HTMLDivElement>(null);
     const isMiniDesktop = useMediaQuery("(max-width: 992px)");
     const isSmartphone = useMediaQuery("(max-width: 600px)");
@@ -33,13 +33,13 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
           behavior: "smooth",
         });
       }
-    }, [currentImageIndex]);
+    }, [currentImageIndex,isMiniDesktop,isSmartphone]);
 
     return <div className="class-GalleryComponent">
         <h1>{title}</h1>
         <p>{data}</p>
         <div ref={galleryRef} className={classOnlyShowImage}>
-            {imageArray.map((img,key) => (
+            {imageArray?.map((img,key) => (
                 <Image
                     onClick={() => setCurrentImageIndex(key)}
                     key={key}
@@ -52,8 +52,9 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
             ))}
         </div>
         {!isMiniDesktop ? !classOnlyShowImage && <div>
-            {imageArray.map((img,key) => (
+            {imageArray?.map((img,key) => (
                 <span
+                    key={key}
                     onClick={() => setCurrentImageIndex(key)}
                     className={key === currentImageIndex && "class-spanSelected"}
                     style={{
