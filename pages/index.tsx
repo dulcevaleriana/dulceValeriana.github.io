@@ -1272,20 +1272,20 @@ const Home = () => {
         {
           imageLink: "/image/mockup/paciente/mockup-04.png",
           imageAlt: "img",
-          imageWidth: 305,
-          imageHeight: 192
+          imageWidth: 586,
+          imageHeight: 330
         },
         {
           imageLink: "/image/mockup/paciente/mockup-28.png",
           imageAlt: "img",
-          imageWidth: 305,
-          imageHeight: 192
+          imageWidth: 586,
+          imageHeight: 330
         },
         {
           imageLink: "/image/mockup/paciente/mockup-36.png",
           imageAlt: "img",
-          imageWidth: 305,
-          imageHeight: 192
+          imageWidth: 586,
+          imageHeight: 330
         }
       ]}
     />

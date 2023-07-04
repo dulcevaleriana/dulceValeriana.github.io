@@ -62,7 +62,7 @@ body {
     margin: 0 -8rem;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto;
-    position: absolute;
+    position: fixed;
     transform: rotate(7deg);
     top: 40vh;
     z-index: -1;
@@ -317,6 +317,7 @@ body {
         opacity: 1;
         width: 20px !important;
         height: 20px !important;
+        display: block !important;
       }
     }
     > div:nth-last-child(2) {
@@ -471,6 +472,13 @@ button:hover {
 
 button:focus {
   background: #3F3D56;
+}
+
+.class-DBAModel,
+.class-GalleryComponent,
+.class-implement,
+.class-NextStep{
+  background-color: #e8e5f0;
 }
 
 @import "./scrollbar.scss";

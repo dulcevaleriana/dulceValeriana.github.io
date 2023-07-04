@@ -45,13 +45,14 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
                     key={key}
                     src={img.imageLink}
                     alt={img.imageAlt}
-                    width={686}
-                    height={429}
+                    width={img.imageWidth}
+                    height={img.imageHeight}
                     className={key === currentImageIndex && "class-imgSelected"}
                 />
             ))}
         </div>
         {!isMiniDesktop ? !classOnlyShowImage && <div>
+            <svg onClick={() => setCurrentImageIndex(currentImageIndex === 0 ? currentImageIndex : currentImageIndex - 1)} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" stroke-width="2" points="9 6 15 12 9 18" transform="matrix(-1 0 0 1 24 0)"></polyline></svg>
             {imageArray?.map((img,key) => (
                 <span
                     key={key}
@@ -59,10 +60,12 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
                     className={key === currentImageIndex && "class-spanSelected"}
                     style={{
                         width: key > 11 && key !== imageArray.length - 1 && 10,
-                        height: key > 11 && key !== imageArray.length - 1 && 10
+                        height: key > 11 && key !== imageArray.length - 1 && 10,
+                        display: key > 30 && key !== imageArray.length - 1 && "none"
                     }}
                 />
             ))}
+            <svg onClick={() => setCurrentImageIndex(currentImageIndex === imageArray.length - 1 ? currentImageIndex : currentImageIndex + 1)} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" stroke-width="2" points="9 6 15 12 9 18"></polyline></svg>
         </div> : <div/>}
     </div>
 }
