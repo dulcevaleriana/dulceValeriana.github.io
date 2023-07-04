@@ -6,7 +6,7 @@ import useMediaQuery from "../hooks/useMediaQuery"
 
 export default function Menu() {
     const [openMenu, setOpenMenu] = useState(false)
-    const isTabletOrLess = useMediaQuery("(max-width: 992px)")
+    const isTabletOrLess = useMediaQuery("(max-width: 800px)")
 
     return <nav className="class-menuComponent">
         {isTabletOrLess ? <>

@@ -343,12 +343,11 @@ body {
   }
 
   .class-classOnlyShowImage {
+    grid-gap: 0px !important;
     gap: 0px !important;
     display: grid !important;
-    grid-template-columns: 409px 296px 686px;
-    grid-template-rows: 310px 138px 256px;
-    justify-self: end;
-
+    grid-template-columns: 25vw 25vw 25vw;
+    grid-template-rows: 20vh 20vh 20vh;
 
     > img {
       color: transparent;
