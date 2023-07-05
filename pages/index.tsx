@@ -1264,7 +1264,7 @@ const Home = () => {
         },
       ]}
     />
-    <GalleryComponent
+    {/* <GalleryComponent
       title="Pruebas de usabilidad"
       data="Se realizaron pruebas de usabilidad con usuarios reales para evaluar la eficacia de las soluciones propuestas. Los resultados de las pruebas indicaron que el servicio SAAS era fácil de usar y que los pacientes podían coordinar sus citas médicas y enviar resultados médicos de manera efectiva. Los usuarios también valoraron positivamente la opción de agendar citas rápidas virtuales o presenciales de 5 minutos."
       classOnlyShowImage="class-classOnlyShowImage"
@@ -1272,23 +1272,23 @@ const Home = () => {
         {
           imageLink: "/image/mockup/paciente/mockup-04.png",
           imageAlt: "img",
-          imageWidth: 305,
-          imageHeight: 192
+          imageWidth: 586,
+          imageHeight: 330
         },
         {
           imageLink: "/image/mockup/paciente/mockup-28.png",
           imageAlt: "img",
-          imageWidth: 305,
-          imageHeight: 192
+          imageWidth: 586,
+          imageHeight: 330
         },
         {
           imageLink: "/image/mockup/paciente/mockup-36.png",
           imageAlt: "img",
-          imageWidth: 305,
-          imageHeight: 192
+          imageWidth: 586,
+          imageHeight: 330
         }
       ]}
-    />
+    /> */}
     <Implement
       title="Implementación"
       data="Una vez validadas las soluciones, se implementan los cambios en el servicio SAAS. Se integró un sistema de gestión de citas médicas, entrega de resultados médicos y comunicación con el médico. También se agregó la opción de agendar citas rápidas virtuales o presenciales de 5 minutos."

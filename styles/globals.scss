@@ -13,29 +13,30 @@ body {
       border-radius: 20px;
   }
 
-  nav.class-menuComponent > ul {
-    display: grid;
-    grid-template-columns: auto 6vw 6vw 147px;
-    gap: 20px;
-    padding: 0;
-    margin: 3vh 0 106px;
-    align-items: center;
-
-    h2 {
-      color: #5f6cba;
-      font-weight: 400;
-    }
-
+  nav.class-menuComponent {
     span {
       background: #5f6cbd;
       color: #e8e5f0;
       padding: 10px;
       border-radius: 10px;
-      margin-left: 10px;
     }
 
-    li {
-      list-style: none;
+    > ul {
+      display: grid;
+      grid-template-columns: auto 6vw 6vw 147px;
+      gap: 20px;
+      padding: 0;
+      margin: 3vh 0 106px;
+      align-items: center;
+
+      h2 {
+        color: #5f6cba;
+        font-weight: 400;
+      }
+
+      li {
+        list-style: none;
+      }
     }
   }
 
@@ -62,7 +63,7 @@ body {
     margin: 0 -8rem;
     display: grid;
     grid-template-columns: auto auto auto auto auto auto auto auto;
-    position: absolute;
+    position: fixed;
     transform: rotate(7deg);
     top: 40vh;
     z-index: -1;
@@ -317,6 +318,7 @@ body {
         opacity: 1;
         width: 20px !important;
         height: 20px !important;
+        display: block !important;
       }
     }
     > div:nth-last-child(2) {
@@ -342,12 +344,11 @@ body {
   }
 
   .class-classOnlyShowImage {
+    grid-gap: 0px !important;
     gap: 0px !important;
     display: grid !important;
-    grid-template-columns: 409px 296px 686px;
-    grid-template-rows: 310px 138px 256px;
-    justify-self: end;
-
+    grid-template-columns: 25vw 25vw 25vw;
+    grid-template-rows: 20vh 20vh 20vh;
 
     > img {
       color: transparent;
@@ -471,6 +472,13 @@ button:hover {
 
 button:focus {
   background: #3F3D56;
+}
+
+.class-DBAModel,
+.class-GalleryComponent,
+.class-implement,
+.class-NextStep{
+  background-color: #e8e5f0;
 }
 
 @import "./scrollbar.scss";
