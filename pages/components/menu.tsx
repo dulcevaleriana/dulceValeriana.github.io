@@ -13,7 +13,8 @@ export default function Menu() {
             <Image onClick={()=>setOpenMenu(!openMenu)} src="/image/icon/menu.svg" alt="menu" width={72.13} height={50}/>
             <div>
                 <h2>Dulce Valeriana</h2>
-                <h5>Diseñadora con un fuerte enfoque en <span>Accesiibilidad Web</span></h5>
+                <h5>Diseñadora con un fuerte enfoque en </h5>
+                <span>Accesiibilidad Web</span>
             </div>
             { openMenu && <ul>
                 <li>

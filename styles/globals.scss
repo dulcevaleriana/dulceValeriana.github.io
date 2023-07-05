@@ -13,29 +13,30 @@ body {
       border-radius: 20px;
   }
 
-  nav.class-menuComponent > ul {
-    display: grid;
-    grid-template-columns: auto 6vw 6vw 147px;
-    gap: 20px;
-    padding: 0;
-    margin: 3vh 0 106px;
-    align-items: center;
-
-    h2 {
-      color: #5f6cba;
-      font-weight: 400;
-    }
-
+  nav.class-menuComponent {
     span {
       background: #5f6cbd;
       color: #e8e5f0;
       padding: 10px;
       border-radius: 10px;
-      margin-left: 10px;
     }
 
-    li {
-      list-style: none;
+    > ul {
+      display: grid;
+      grid-template-columns: auto 6vw 6vw 147px;
+      gap: 20px;
+      padding: 0;
+      margin: 3vh 0 106px;
+      align-items: center;
+
+      h2 {
+        color: #5f6cba;
+        font-weight: 400;
+      }
+
+      li {
+        list-style: none;
+      }
     }
   }
 

@@ -4,50 +4,9 @@
         display: none;
     }
 }
-// big smartphone
-@media only screen and (max-width: 800px) {
-    nav.class-menuComponent {
-        display: grid;
-        grid-template-columns: 73px auto;
-        align-items: center;
-        gap: 20px;
-        margin-top: 20px;
-
-        h2 {
-            color: #5f6cba;
-            font-weight: 400;
-        }
-
-        h5 {
-            color: #3F3D56;
-
-            span {
-                background: #5f6cbd;
-                color: #e8e5f0;
-                padding: 10px;
-                border-radius: 10px;
-                margin-left: 10px;
-            }
-        }
-
-        ul {
-            position: fixed;
-            top: 125px;
-            bottom: 0;
-            right: 0;
-            left: 0;
-            background: #cbc7d5;
-            margin: 0 !important;
-            display: flex !important;
-            flex-direction: column;
-            padding: 20px 2rem 20px calc(2rem + 73px + 20px) !important;
-            text-align: left;
-            align-items: flex-start !important;
-        }
-    }
-}
 // smartphone
 @media only screen and (max-width: 600px) {
+
     .class-Header {
         div:first-child {
             max-width: 100% !important;
@@ -130,23 +89,81 @@
         text-align: center;
     }
 }
-// desktop mini
-@media only screen and (max-width: 1024px) {
+// big smartphone
+@media only screen and (max-width: 800px) {
+    .class-NextStep{
+        justify-items: center;
+        text-align: center;
+        justify-content: center;
+
+        > p {
+            width: 70%;
+        }
+
+        > div:last-child {
+            display: flex;
+            gap: 20px;
+            flex-direction: column;
+            align-items: center;
+        }
+    }
     .Home_container__97eC3,
     .container {
         padding: 0 2rem !important;
     }
+    nav.class-menuComponent {
+        display: grid;
+        grid-template-columns: 73px auto;
+        align-items: center;
+        gap: 20px;
+        margin-top: 20px;
+
+        h2 {
+            color: #5f6cba;
+            font-weight: 400;
+        }
+
+        h5 {
+            color: #3F3D56;
+
+            span {
+                background: #5f6cbd;
+                color: #e8e5f0;
+                padding: 10px;
+                border-radius: 10px;
+                margin-left: 10px;
+            }
+        }
+
+        ul {
+            position: fixed;
+            top: 120px;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: #cbc7d5;
+            margin: 0 !important;
+            display: flex !important;
+            flex-direction: column;
+            padding: 20px 2rem 20px calc(2rem + 73px + 20px) !important;
+            text-align: left;
+            align-items: flex-start !important;
+        }
+    }
+}
+// desktop mini
+@media only screen and (max-width: 1024px) {
     html {
         nav.class-menuComponent > ul {
             display: grid;
-            grid-template-columns: auto 15vw 15vw 147px;
+            grid-template-columns: auto max-content max-content max-content;
         }
         .class-Header {
             display: flex;
             align-items: center;
 
             div:first-child {
-                max-width: 50vw;
+                max-width: 100vw !important;
                 text-align: center;
             }
         }
