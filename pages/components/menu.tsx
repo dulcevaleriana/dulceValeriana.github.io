@@ -6,10 +6,11 @@ import useMediaQuery from "../hooks/useMediaQuery"
 
 export default function Menu() {
     const [openMenu, setOpenMenu] = useState(false)
-    const isTabletOrLess = useMediaQuery("(max-width: 800px)")
+    const isTablet = useMediaQuery("(max-width: 992px)")
+    const isSmartphone = useMediaQuery("(max-width: 800px)")
 
     return <nav className="class-menuComponent">
-        {isTabletOrLess ? <>
+        {isSmartphone ? <>
             <Image onClick={()=>setOpenMenu(!openMenu)} src="/image/icon/menu.svg" alt="menu" width={72.13} height={50}/>
             <div>
                 <h2>Dulce Valeriana</h2>
@@ -30,7 +31,10 @@ export default function Menu() {
         </> : <ul>
             <li>
                 <h2>Dulce Valeriana</h2>
-                <h5>Diseñadora con un fuerte enfoque en <span>Accesiibilidad Web</span></h5>
+                {isTablet ? <>
+                    <h5>Diseñadora con un fuerte enfoque en</h5>
+                    <span>Accesiibilidad Web</span>
+                </> : <h5>Diseñadora con un fuerte enfoque en <span>Accesiibilidad Web</span></h5>}
             </li>
             <li>
                 <Link href="/">Trabajos</Link>

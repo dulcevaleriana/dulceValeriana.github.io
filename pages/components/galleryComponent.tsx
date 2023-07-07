@@ -24,12 +24,13 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
     const galleryRef = useRef<HTMLDivElement>(null);
     const isMiniDesktop = useMediaQuery("(max-width: 992px)");
     const isSmartphone = useMediaQuery("(max-width: 600px)");
+    let valueOption = isSmartphone ? 2 : isMiniDesktop ? 5 : 11;
+    let valueViewOption = isSmartphone ? 7 : isMiniDesktop ? 15 : 30;
 
     useEffect(() => {
       if (galleryRef.current) {
         galleryRef.current.scrollTo({
           left: isSmartphone ? currentImageIndex * (window.innerWidth / 1.65) : isMiniDesktop ? currentImageIndex * (window.innerWidth / 3) : currentImageIndex * 330,
-        //   left: currentImageIndex * galleryRef.current.offsetWidth,
           behavior: "smooth",
         });
       }
@@ -51,7 +52,7 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
                 />
             ))}
         </div>
-        {!isMiniDesktop ? !classOnlyShowImage && <div>
+        {!classOnlyShowImage && <div>
             <svg onClick={() => setCurrentImageIndex(currentImageIndex === 0 ? currentImageIndex : currentImageIndex - 1)} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" stroke-width="2" points="9 6 15 12 9 18" transform="matrix(-1 0 0 1 24 0)"></polyline></svg>
             {imageArray?.map((img,key) => (
                 <span
@@ -59,14 +60,14 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
                     onClick={() => setCurrentImageIndex(key)}
                     className={key === currentImageIndex && "class-spanSelected"}
                     style={{
-                        width: key > 11 && key !== imageArray.length - 1 && 10,
-                        height: key > 11 && key !== imageArray.length - 1 && 10,
-                        display: key > 30 && key !== imageArray.length - 1 && "none"
+                        width: key > valueOption && key !== imageArray.length - 1 && 10,
+                        height: key > valueOption && key !== imageArray.length - 1 && 10,
+                        display: key > valueViewOption && key !== imageArray.length - 1 && "none"
                     }}
                 />
             ))}
             <svg onClick={() => setCurrentImageIndex(currentImageIndex === imageArray.length - 1 ? currentImageIndex : currentImageIndex + 1)} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" stroke-width="2" points="9 6 15 12 9 18"></polyline></svg>
-        </div> : <div/>}
+        </div>}
     </div>
 }
 
