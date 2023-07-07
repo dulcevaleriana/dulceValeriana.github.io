@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react"
+import React, { FC, useState, useEffect } from "react"
 import useMediaQuery from "../hooks/useMediaQuery"
 
 interface ExperienceMapInterface {
@@ -34,6 +34,17 @@ const ExperienceMap: FC<ExperienceMapInterface> = ({
             </div>)}
         </div>
     }
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+          const nextKey = (getKey + 1) % mapsArray.length;
+          setGetKey(nextKey);
+        }, 5000);
+
+        return () => {
+          clearInterval(interval);
+        };
+    }, [getKey, mapsArray]);
 
     return <div className="class-ExperienceMap">
         <h1>{title}</h1>
