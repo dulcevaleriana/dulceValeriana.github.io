@@ -35,7 +35,6 @@ const CheckUser: FC<CheckUserInterface> = ({
     }
 
     useEffect(() => {
-        // Automatically advance to the next question every 5 seconds
         const interval = setInterval(() => {
           const nextKey = (getKey + 1) % questions.length;
           setGetKey(nextKey);
@@ -45,7 +44,7 @@ const CheckUser: FC<CheckUserInterface> = ({
         return () => {
           clearInterval(interval);
         };
-      }, [getKey, initialAnswer, questions]);
+    }, [getKey, initialAnswer, questions]);
 
     return <div className="class-checkUser">
         <div>
