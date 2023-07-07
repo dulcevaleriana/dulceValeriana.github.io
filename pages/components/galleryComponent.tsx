@@ -36,6 +36,17 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
       }
     }, [currentImageIndex,isMiniDesktop,isSmartphone]);
 
+    useEffect(() => {
+        const interval = setInterval(() => {
+          const nextKey = (currentImageIndex + 1) % imageArray.length;
+          setCurrentImageIndex(nextKey);
+        }, 3000);
+
+        return () => {
+          clearInterval(interval);
+        };
+    }, [currentImageIndex, imageArray]);
+
     return <div className="class-GalleryComponent">
         <h1>{title}</h1>
         <p>{data}</p>
