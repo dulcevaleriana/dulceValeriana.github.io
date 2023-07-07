@@ -1,4 +1,4 @@
-import React, { FC, useState } from "react"
+import React, { FC, useState, useEffect } from "react"
 import Image from 'next/image'
 import useMediaQuery from "../hooks/useMediaQuery"
 
@@ -33,6 +33,19 @@ const CheckUser: FC<CheckUserInterface> = ({
         setGetKey(key)
         setAnswer(answer)
     }
+
+    useEffect(() => {
+        // Automatically advance to the next question every 5 seconds
+        const interval = setInterval(() => {
+          const nextKey = (getKey + 1) % questions.length;
+          setGetKey(nextKey);
+          setAnswer(questions[nextKey]?.answer || initialAnswer);
+        }, 3000);
+
+        return () => {
+          clearInterval(interval);
+        };
+      }, [getKey, initialAnswer, questions]);
 
     return <div className="class-checkUser">
         <div>
