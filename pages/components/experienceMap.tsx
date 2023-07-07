@@ -39,7 +39,7 @@ const ExperienceMap: FC<ExperienceMapInterface> = ({
         const interval = setInterval(() => {
           const nextKey = (getKey + 1) % mapsArray.length;
           setGetKey(nextKey);
-        }, 3000);
+        }, 5000);
 
         return () => {
           clearInterval(interval);

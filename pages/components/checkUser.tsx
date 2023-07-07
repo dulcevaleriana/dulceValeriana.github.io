@@ -39,7 +39,7 @@ const CheckUser: FC<CheckUserInterface> = ({
           const nextKey = (getKey + 1) % questions.length;
           setGetKey(nextKey);
           setAnswer(questions[nextKey]?.answer || initialAnswer);
-        }, 3000);
+        }, 5000);
 
         return () => {
           clearInterval(interval);

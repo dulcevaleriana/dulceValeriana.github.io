@@ -40,7 +40,7 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
         const interval = setInterval(() => {
           const nextKey = (currentImageIndex + 1) % imageArray.length;
           setCurrentImageIndex(nextKey);
-        }, 3000);
+        }, 5000);
 
         return () => {
           clearInterval(interval);
