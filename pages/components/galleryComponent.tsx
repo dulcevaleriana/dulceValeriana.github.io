@@ -1,6 +1,15 @@
 import React, { FC, useState, useEffect, useRef } from "react"
 import Image from 'next/image'
 import useMediaQuery from "../hooks/useMediaQuery"
+// Import Swiper React components
+import { Swiper, SwiperSlide } from 'swiper/react';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/pagination';
+// import required modules
+import { Pagination } from 'swiper/modules';
+// import required modules
+import { Navigation } from 'swiper/modules';
 
 interface GalleryComponentInterface {
     title: string,
@@ -24,8 +33,6 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
     const galleryRef = useRef<HTMLDivElement>(null);
     const isMiniDesktop = useMediaQuery("(max-width: 992px)");
     const isSmartphone = useMediaQuery("(max-width: 600px)");
-    let valueOption = isSmartphone ? 2 : isMiniDesktop ? 5 : 11;
-    let valueViewOption = isSmartphone ? 7 : isMiniDesktop ? 15 : 30;
 
     useEffect(() => {
       if (galleryRef.current) {
@@ -48,37 +55,52 @@ const GalleryComponent: FC<GalleryComponentInterface> = ({
     }, [currentImageIndex, imageArray]);
 
     return <div className="class-GalleryComponent">
-        <h1>{title}</h1>
-        <p>{data}</p>
-        <div ref={galleryRef} className={classOnlyShowImage}>
-            {imageArray?.map((img,key) => (
-                <Image
-                    onClick={() => setCurrentImageIndex(key)}
-                    key={key}
-                    src={img.imageLink}
-                    alt={img.imageAlt}
-                    width={img.imageWidth}
-                    height={img.imageHeight}
-                    className={key === currentImageIndex && "class-imgSelected"}
-                />
-            ))}
+        <div>
+            <h1>{title}</h1>
+            <p>{data}</p>
         </div>
-        {!classOnlyShowImage && <div>
-            <svg onClick={() => setCurrentImageIndex(currentImageIndex === 0 ? currentImageIndex : currentImageIndex - 1)} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" stroke-width="2" points="9 6 15 12 9 18" transform="matrix(-1 0 0 1 24 0)"></polyline></svg>
-            {imageArray?.map((img,key) => (
-                <span
-                    key={key}
-                    onClick={() => setCurrentImageIndex(key)}
-                    className={key === currentImageIndex && "class-spanSelected"}
-                    style={{
-                        width: key > valueOption && key !== imageArray.length - 1 && 10,
-                        height: key > valueOption && key !== imageArray.length - 1 && 10,
-                        display: key > valueViewOption && key !== imageArray.length - 1 && "none"
-                    }}
-                />
-            ))}
-            <svg onClick={() => setCurrentImageIndex(currentImageIndex === imageArray.length - 1 ? currentImageIndex : currentImageIndex + 1)} stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 24 24" height="1em" width="1em" xmlns="http://www.w3.org/2000/svg"><polyline fill="none" stroke="#000" stroke-width="2" points="9 6 15 12 9 18"></polyline></svg>
-        </div>}
+        {isMiniDesktop ? <Swiper
+                    navigation={true}
+                    modules={[Navigation]}
+                    className={`mySwiper ${classOnlyShowImage}`}
+                >
+                    {imageArray?.map((img,key) => (
+                        <SwiperSlide>
+                            <Image
+                                onClick={() => setCurrentImageIndex(key)}
+                                key={key}
+                                src={img.imageLink}
+                                alt={img.imageAlt}
+                                width={img.imageWidth}
+                                height={img.imageHeight}
+                                className={key === currentImageIndex && "class-imgSelected"}
+                            />
+                        </SwiperSlide>
+                    ))}
+                </Swiper> : <Swiper
+                slidesPerView={4}
+                spaceBetween={30}
+                centeredSlides={true}
+                pagination={{
+                    clickable: true,
+                }}
+                modules={[Pagination]}
+                className={`mySwiper ${classOnlyShowImage}`}
+            >
+                {imageArray?.map((img,key) => (
+                    <SwiperSlide>
+                        <Image
+                            onClick={() => setCurrentImageIndex(key)}
+                            key={key}
+                            src={img.imageLink}
+                            alt={img.imageAlt}
+                            width={img.imageWidth}
+                            height={img.imageHeight}
+                            className={key === currentImageIndex && "class-imgSelected"}
+                        />
+                    </SwiperSlide>
+                ))}
+            </Swiper>}
     </div>
 }
 

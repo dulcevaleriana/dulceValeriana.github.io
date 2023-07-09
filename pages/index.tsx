@@ -181,15 +181,6 @@ const Home = () => {
           }
         ]}
     />
-        {/* 
-    data: string,
-    mapsArray: {
-        title: string,
-        dataArray: {
-            name: string,
-            data: string[]
-        }[]
-    }[] */}
     <ExperienceMap
       title="Mapas de experiencia"
       data="Se crearon mapas de experiencia para cada uno de los perfiles de usuario, mostrando los diferentes puntos de contacto que los usuarios tendrían con el servicio SAAS. Se incluyeron elementos como la creación de citas, la gestión de resultados médicos y la comunicación con el médico."
